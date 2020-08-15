@@ -123,11 +123,11 @@ Click [here](https://maxleungtszchun.github.io/rfm-results) to get the results.
 
 ## 2. Statistical Modelling
 Click [here](https://drive.google.com/file/d/1ZXElhRIbISSyisJIFKaDgtNcnPAyTFbv/view?usp=sharing) to download regression data <br/>
-return_1 = come back indicator <br/>
-f_1 = frequency of visit <br/>
-n_r_s = standardized negative recency value (z-score) <br/>
-f_s = standardized frequency value (z-score) <br/>
-m_s = standardized monetary value (z-score)
+return_1 = come back indicator (Period 1) <br/>
+f_1 = frequency of visit (Period 1) <br/>
+n_r_s = standardized negative recency value (z-score) (Period 0) <br/>
+f_s = standardized frequency value (z-score) (Period 0) <br/>
+m_s = standardized monetary value (z-score) (Period 0)
 ```SAS
 %MACRO getData(path, out, dbms);
 	PROC IMPORT DATAFILE = &path OUT = &out DBMS = &dbms REPLACE;
