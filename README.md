@@ -2,7 +2,7 @@ Note: If you are interested in R instead, please click [here](https://github.com
 
 # Customer Analytics in SAS
 ## 1. RFM Analysis
-Click [here](https://drive.google.com/file/d/1xDuSTrjgy4JhtTae900DtdaKTWLfcs66/view?usp=sharing) to download customer data (Period 0)
+Click [here](https://drive.google.com/file/d/1xDuSTrjgy4JhtTae900DtdaKTWLfcs66/view?usp=sharing) to download customer data (Period 0) <br/>
 Click [here](https://drive.google.com/file/d/1-0bqUvNFnQTbTI7hzfgAZQHUub_1-JY0/view?usp=sharing) to download transaction data (Period 0)
 ```SAS
 %MACRO getData(path, out, dbms);
@@ -122,11 +122,11 @@ RUN;
 Click [here](https://maxleungtszchun.github.io/rfm-results) to get the results.
 
 ## 2. Statistical Modelling
-Click [here](https://drive.google.com/file/d/1ZXElhRIbISSyisJIFKaDgtNcnPAyTFbv/view?usp=sharing) to download regression data
-return_1 = come back indicator
-f_1 = frequency of visit
-n_r_s = standardized negative recency value (z-score)
-f_s = standardized frequency value (z-score)
+Click [here](https://drive.google.com/file/d/1ZXElhRIbISSyisJIFKaDgtNcnPAyTFbv/view?usp=sharing) to download regression data <br/>
+return_1 = come back indicator <br/>
+f_1 = frequency of visit <br/>
+n_r_s = standardized negative recency value (z-score) <br/>
+f_s = standardized frequency value (z-score) <br/>
 m_s = standardized monetary value (z-score)
 ```SAS
 %MACRO getData(path, out, dbms);
