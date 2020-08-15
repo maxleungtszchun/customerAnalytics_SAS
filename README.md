@@ -2,6 +2,8 @@ Note: If you are interested in R instead, please click [here](https://github.com
 
 # Customer Analytics in SAS
 ## 1. RFM Analysis
+Click [here](https://drive.google.com/file/d/1xDuSTrjgy4JhtTae900DtdaKTWLfcs66/view?usp=sharing) to download customer data (Period 0)
+Click [here](https://drive.google.com/file/d/1-0bqUvNFnQTbTI7hzfgAZQHUub_1-JY0/view?usp=sharing) to download transaction data (Period 0)
 ```SAS
 %MACRO getData(path, out, dbms);
 	PROC IMPORT DATAFILE = &path OUT = &out DBMS = &dbms REPLACE;
