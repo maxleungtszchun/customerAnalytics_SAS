@@ -1,3 +1,5 @@
+Note: If you are interested in R instead, please click [here](https://github.com/maxleungtszchun/customerAnalytics) to read Customer Analytics in R. If you are interested in SAS, please continue reading.
+
 # Customer Analytics in SAS
 ## 1. RFM Analysis
 ```SAS
