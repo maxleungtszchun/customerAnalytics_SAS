@@ -67,12 +67,12 @@
 				CLASS Frequency_Score Recency_Score;
 				VAR RFM_Score Monetary;
 			RUN;
-		%END;
-	%ELSE
-		%DO;
-			PROC FREQ DATA = whole;
-				TABLES Frequency_Score * Recency_Score /
-				NOCOL NOROW NOPERCENT;
+			
+			PROC TABULATE DATA = whole;
+				CLASS Frequency_Score Recency_Score;
+				VAR RFM_Score Monetary;
+				TABLE Frequency_Score,
+					RFM_Score * Recency_Score * (n mean);
 			RUN;
 		%END;
 %MEND;
