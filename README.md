@@ -120,3 +120,35 @@ PROC EXPORT DATA = whole
 RUN;
 ```
 Click [here](https://maxleungtszchun.github.io/rfm-results) to get the results.
+
+## 2. Statistical Modelling
+Click [here](https://drive.google.com/file/d/1ZXElhRIbISSyisJIFKaDgtNcnPAyTFbv/view?usp=sharing) to download regression data
+return_1 = come back indicator
+f_1 = frequency of visit
+n_r_s = standardized negative recency value (z-score)
+f_s = standardized frequency value (z-score)
+m_s = standardized monetary value (z-score)
+```SAS
+%MACRO getData(path, out, dbms);
+	PROC IMPORT DATAFILE = &path OUT = &out DBMS = &dbms REPLACE;
+		GETNAMES = yes;
+	RUN;
+%MEND;
+
+%MACRO GLM(data, y, x, dist, link);
+	PROC GENMOD DATA = &data DESCENDING;
+		MODEL &y = &x /
+		DIST = &dist
+		LINK = &link;
+	RUN;
+%MEND;
+
+%getData("/home/userAccount/sasuser.v94/regression_data.csv", regression_data, "csv");
+%GLM(regression_data, return_1, n_r_s f_s m_s, binomial, logit);
+%GLM(regression_data, f_1, n_r_s f_s m_s, poisson, log);
+
+PROC CORR DATA = regression_data PLOTS = MATRIX PLOTS(maxpoints = none);
+	VAR n_r_s f_s m_s;
+RUN;
+```
+Click [here](https://maxleungtszchun.github.io/glm-results) to get the results.
