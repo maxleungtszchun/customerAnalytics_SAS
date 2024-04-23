@@ -1,4 +1,4 @@
-Note: If you are interested in R instead, please click [here](https://github.com/maxleungtszchun/customerAnalytics) to read Customer Analytics in R. If you are interested in SAS, please continue reading.
+Note: If you are interested in R instead, please click [here](https://github.com/maxleungtszchun/customerAnalytics) to read Customer Analytics in R.
 
 # Customer Analytics in SAS
 ## 1. RFM Analysis
@@ -119,7 +119,6 @@ PROC EXPORT DATA = whole
    REPLACE;
 RUN;
 ```
-Click [here](https://maxleungtszchun.github.io/rfm-results) to get the results.
 
 ## 2. Statistical Modelling
 Click [here](https://drive.google.com/file/d/1ZXElhRIbISSyisJIFKaDgtNcnPAyTFbv/view?usp=sharing) to download regression data <br/>
@@ -151,29 +150,3 @@ PROC CORR DATA = regression_data PLOTS = MATRIX PLOTS(maxpoints = none);
 	VAR n_r_s f_s m_s;
 RUN;
 ```
-Click [here](https://maxleungtszchun.github.io/glm-results) to get the results.
-## 3. Machine Learning
-### Random Forest
-```SAS
-%MACRO getData(path, out, dbms);
-	PROC IMPORT DATAFILE = &path OUT = &out DBMS = &dbms REPLACE;
-		GETNAMES = yes;
-	RUN;
-%MEND;
-
-%getData("/home/userAccount/sasuser.v94/regression_data.csv", regression_data, "csv");
-
-PROC HPFOREST DATA = regression_data
-	MAXTREES = 500
-	VARS_TO_TRY = 2
-	SEED = 1
-	TRAINFRACTION = 0.7
-	MAXDEPTH = 50
-	LEAFSIZE = 10
-	ALPHA = 0.1;
-	TARGET return_1 / LEVEL = binary;
-	INPUT n_r_s f_s m_s / LEVEL = interval;
-	ODS OUTPUT fitstatistics = fit;
-RUN;
-```
-Click [here](https://maxleungtszchun.github.io/ml-results) to get the results.
